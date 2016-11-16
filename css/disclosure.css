@@ -105,9 +105,9 @@ html {
 .dc-slide {
   position: absolute;
   width: 84vw;
-  height: 84vh;
+  height: 47.25vw;
   left: 8vw;
-  top: 8vh; }
+  top: 26.375vw; }
   .dc-slide--dev {
     background: #bf4040; }
   .dc-slide__header--dev {

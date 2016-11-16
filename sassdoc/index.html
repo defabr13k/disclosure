@@ -1,0 +1,190 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>SassDoc</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="SassDoc - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">SassDoc</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="assembly-base"><a href="#assembly-base">assembly-base</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="assembly-base-variable"><a href="#assembly-base-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="assembly-base" data-name="project-dev-mode" data-type="variable"><a href="#assembly-base-variable-project-dev-mode">project-dev-mode</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="layouts"><a href="#layouts">layouts</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="layouts-variable"><a href="#layouts-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="layouts" data-name="dc-slide-ratios" data-type="variable"><a href="#layouts-variable-dc-slide-ratios">dc-slide-ratios</a></li><li class="sidebar__item sassdoc__item" data-group="layouts" data-name="ms-ratio" data-type="variable"><a href="#layouts-variable-ms-ratio">ms-ratio</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="dc-make-layouts" data-type="mixin"><a href="#undefined-mixin-dc-make-layouts">dc-make-layouts</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="dc-make-flex-properties" data-type="mixin"><a href="#undefined-mixin-dc-make-flex-properties">dc-make-flex-properties</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="dc-make-justify-content-properties" data-type="mixin"><a href="#undefined-mixin-dc-make-justify-content-properties">dc-make-justify-content-properties</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="dc-make-align-self-properties" data-type="mixin"><a href="#undefined-mixin-dc-make-align-self-properties">dc-make-align-self-properties</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="dc-make-slides" data-type="mixin"><a href="#undefined-mixin-dc-make-slides">dc-make-slides</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="assembly-base"><div class="container">assembly-base</div></h1><section class="main__sub-section" id="assembly-base-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="assembly-base-variable-project-dev-mode"><h3 class="item__heading"><a class="item__name" href="#variable-project-dev-mode">project-dev-mode</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$project-dev-mode: true !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Springflow Grid Gutter Width</p></div><h3 class="item__sub-heading">Type</h3><p><code>Boolean</code></p></section></section></section><section class="main__section"><h1 class="main__heading" id="layouts"><div class="container">layouts</div></h1><section class="main__sub-section" id="layouts-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="layouts-variable-dc-slide-ratios"><h3 class="item__heading"><a class="item__name" href="#variable-dc-slide-ratios">dc-slide-ratios</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$dc-slide-ratios: (
+  &#39;minor_second&#39;  : 15/16,
+	&#39;major_second&#39;  : 8/9,
+	&#39;minor_third&#39;   : 5/6,
+	&#39;major_third&#39;   : 4/5,
+  &#39;perfect_fourth&#39;: 3/4,
+  &#39;perfect_fifth&#39; : 2/3,
+  &#39;minor_sixth&#39;   : 5/8,
+  &#39;golden_section&#39;: 1/1.618,
+  &#39;major_sixth&#39;   : 3/5,
+  &#39;minor_seventh&#39; : 9/16,
+  &#39;major_seventh&#39; : 8/15,
+  &#39;octave&#39;        : 1/2,
+  &#39;major_tenth&#39;   : 2/5,
+  &#39;major_eleventh&#39;: 3/8,
+  &#39;major_twelfth&#39; : 1/3,
+  &#39;octave_double&#39; : 1/4
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Slide ratios equal to modular scale ratios</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p></section><section class="main__item container item" id="layouts-variable-ms-ratio"><h3 class="item__heading"><a class="item__name" href="#variable-ms-ratio">ms-ratio</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$ms-ratio: map-get($ms-ratios, &#39;minor_seventh&#39;) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Slide Ratio based on <a href="http://modularscale.com/scale/?px1=16&amp;px2=18&amp;ra1=1.333&amp;ra2=0">http://modularscale.com/scale/?px1=16&amp;px2=18&amp;ra1=1.333&amp;ra2=0</a></p></div><h3 class="item__sub-heading">Type</h3><p><code>Number</code></p></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-dc-make-layouts"><h3 class="item__heading"><a class="item__name" href="#mixin-dc-make-layouts">dc-make-layouts</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin dc-make-layouts() { 
+  
+  /**
+  * Flex lay-out classes
+  * Horizontal lay-out: .dc-layout-horizontal
+  * Vertical lay-out: .dc-layout-vertical
+  */
+  .dc-layout {
+    &amp;-vertical {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      
+      &gt; * {
+        flex: 1 0 auto;
+      }
+      
+    }
+    &amp;-horizontal {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      
+      &gt; * {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+ }" data-collapsed="@mixin dc-make-layouts() { ... }"><code>@mixin dc-make-layouts() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for creating a Flex lay-out horizontal and vertical</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Philippe De Pauw - Waterschoot</p></li></ul></section><section class="main__item container item" id="undefined-mixin-dc-make-flex-properties"><h3 class="item__heading"><a class="item__name" href="#mixin-dc-make-flex-properties">dc-make-flex-properties</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin dc-make-flex-properties() { 
+  
+  /**
+  * Flex property classes
+  * Combination of flex-grow, flex-shrink and flex-basis
+  */
+  .dc-flex {
+
+    @for $g from 1 through 8 {   
+
+      &amp;__#{$g - 1}_0_auto {
+        flex: ($g - 1) 0 auto;
+      }
+            
+    }
+
+    @for $s from 1 through 8 {   
+
+      &amp;__0_#{$s - 1}_auto {
+        flex: 0 ($s - 1) auto;
+      }
+            
+    } 
+    
+  }
+
+ }" data-collapsed="@mixin dc-make-flex-properties() { ... }"><code>@mixin dc-make-flex-properties() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for creating a Flex-based property. Shorthand for flex-grow, flex-shrink and flex-basis</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Philippe De Pauw - Waterschoot</p></li></ul></section><section class="main__item container item" id="undefined-mixin-dc-make-justify-content-properties"><h3 class="item__heading"><a class="item__name" href="#mixin-dc-make-justify-content-properties">dc-make-justify-content-properties</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin dc-make-justify-content-properties() { 
+  
+  /**
+  * Flex justify-content classes
+  * start (flex-start), end (flex-end), middle (center), space-between (space-between), space-around (space-around)
+  */
+  .dc-justify {
+  
+    &amp;__start {
+      justify-content: flex-start;  
+    }
+    
+    &amp;__end {
+      justify-content: flex-end;  
+    }
+    
+    &amp;__middle {
+      justify-content: center;  
+    }
+    
+    &amp;__space-between {
+      justify-content: space-between;  
+    }
+    
+    &amp;__space-around {
+      justify-content: space-around;  
+    }
+    
+  }
+
+ }" data-collapsed="@mixin dc-make-justify-content-properties() { ... }"><code>@mixin dc-make-justify-content-properties() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for creating Flex justify-content properties.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Philippe De Pauw - Waterschoot</p></li></ul></section><section class="main__item container item" id="undefined-mixin-dc-make-align-self-properties"><h3 class="item__heading"><a class="item__name" href="#mixin-dc-make-align-self-properties">dc-make-align-self-properties</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin dc-make-align-self-properties() { 
+  
+  /**
+  * Flex align-self classes
+  * start (flex-start), end (flex-end), middle (center), stretch (stretch)
+  */
+  .dc-align-self {
+  
+    &amp;__start {
+      align-self: flex-start;
+    }
+    
+    &amp;__end {
+      align-self: flex-end;
+    }
+    
+    &amp;__middle {
+      align-self: center;
+    }
+    
+    &amp;__stretch {
+      align-self: stretch;
+    }
+    
+  }
+
+ }" data-collapsed="@mixin dc-make-align-self-properties() { ... }"><code>@mixin dc-make-align-self-properties() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for creating Flex align-self properties.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Philippe De Pauw - Waterschoot</p></li></ul></section><section class="main__item container item" id="undefined-mixin-dc-make-slides"><h3 class="item__heading"><a class="item__name" href="#mixin-dc-make-slides">dc-make-slides</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin dc-make-slides($dev-mode: $project-dev-mode) { 
+  
+  /**
+  * Flex align-self classes
+  * start (flex-start), end (flex-end), middle (center), stretch (stretch)
+  */
+  .dc-slide {
+    position: absolute;
+    width: 84vw;
+    height: 84vh;
+    left: 8vw;
+    top: 8vh;
+
+    &amp;--dev {
+      background:$dc-slide-dev-background-color;
+    }
+    
+    &amp;__header {
+
+      @if $dev-mode {
+        &amp;--dev {
+          background:$dc-slide-header-dev-background-color;
+        }
+      }
+
+    }
+    
+    &amp;__main {
+
+      @if $dev-mode {
+        &amp;--dev {
+          background:$dc-slide-main-dev-background-color;
+        }
+      }
+
+    }
+    
+    &amp;__footer {
+
+      @if $dev-mode {
+        &amp;--dev {
+          background:$dc-slide-footer-dev-background-color;	
+        }
+      }
+
+    }
+
+    &amp;__breadcrumb {
+
+      @if $dev-mode {
+        &amp;--dev {
+          background:$dc-slide-breadcrumb-dev-background-color;	
+        }
+      }
+
+    }
+    
+  }
+
+ }" data-collapsed="@mixin dc-make-slides($dev-mode: $project-dev-mode) { ... }"><code>@mixin dc-make-slides($dev-mode: $project-dev-mode) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for creating Slides</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$dev-mode</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$project-dev-mode</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Philippe De Pauw - Waterschoot</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">SassDoc</span><!-- Version --><!-- License --></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
