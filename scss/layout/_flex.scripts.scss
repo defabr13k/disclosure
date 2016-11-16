@@ -1,0 +1,208 @@
+/// Mixin for creating a Flex lay-out horizontal and vertical
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-layouts() {
+  
+  /**
+  * Flex lay-out classes
+  * Horizontal lay-out: .dc-layout-horizontal
+  * Vertical lay-out: .dc-layout-vertical
+  */
+  .dc-layout {
+    &-vertical {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      
+      > * {
+        flex: 1 0 auto;
+      }
+      
+    }
+    &-horizontal {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      
+      > * {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+}
+
+/// Mixin for creating a Flex-based property. Shorthand for flex-grow, flex-shrink and flex-basis
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-flex-properties() {
+  
+  /**
+  * Flex property classes
+  * Combination of flex-grow, flex-shrink and flex-basis
+  */
+  .dc-flex {
+
+    @for $g from 1 through 8 {   
+
+      &__#{$g - 1}_0_auto {
+        flex: ($g - 1) 0 auto;
+      }
+            
+    }
+
+    @for $s from 1 through 8 {   
+
+      &__0_#{$s - 1}_auto {
+        flex: 0 ($s - 1) auto;
+      }
+            
+    } 
+    
+  }
+
+}
+
+/// Mixin for creating Flex justify-content properties.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-justify-content-properties() {
+  
+  /**
+  * Flex justify-content classes
+  * start (flex-start), end (flex-end), middle (center), space-between (space-between), space-around (space-around)
+  */
+  .dc-justify {
+  
+    &__start {
+      justify-content: flex-start;  
+    }
+    
+    &__end {
+      justify-content: flex-end;  
+    }
+    
+    &__middle {
+      justify-content: center;  
+    }
+    
+    &__space-between {
+      justify-content: space-between;  
+    }
+    
+    &__space-around {
+      justify-content: space-around;  
+    }
+    
+  }
+
+}
+
+/// Mixin for creating Flex align-self properties.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-align-self-properties() {
+  
+  /**
+  * Flex align-self classes
+  * start (flex-start), end (flex-end), middle (center), stretch (stretch)
+  */
+  .dc-align-self {
+  
+    &__start {
+      align-self: flex-start;
+    }
+    
+    &__end {
+      align-self: flex-end;
+    }
+    
+    &__middle {
+      align-self: center;
+    }
+    
+    &__stretch {
+      align-self: stretch;
+    }
+    
+  }
+
+}
+
+/// Mixin for creating Slides
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @param {Map} $dev-mode [$project-dev-mode]
+///
+/// @access public
+@mixin dc-make-slides($dev-mode:$project-dev-mode) {
+  
+  /**
+  * Flex align-self classes
+  * start (flex-start), end (flex-end), middle (center), stretch (stretch)
+  */
+  .dc-slide {
+    position: absolute;
+    width: 84vw;
+    height: 84vh;
+    left: 8vw;
+    top: 8vh;
+
+    &--dev {
+      background:$dc-slide-dev-background-color;
+    }
+    
+    &__header {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-header-dev-background-color;
+        }
+      }
+
+    }
+    
+    &__main {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-main-dev-background-color;
+        }
+      }
+
+    }
+    
+    &__footer {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-footer-dev-background-color;	
+        }
+      }
+
+    }
+
+    &__breadcrumb {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-breadcrumb-dev-background-color;	
+        }
+      }
+
+    }
+    
+  }
+
+}

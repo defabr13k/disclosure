@@ -1,0 +1,19 @@
+/// Make the Flex lay-outs
+/// @group Layouts
+@include dc-make-layouts();
+
+/// Make the Flex properties
+/// @group Layouts
+@include dc-make-flex-properties();
+
+/// Make the Flex justify-content properties
+/// @group Layouts
+@include dc-make-justify-content-properties();
+
+/// Make the Flex align-self properties
+/// @group Layouts
+@include dc-make-align-self-properties();
+
+/// Make the Slides classes
+/// @group Layouts
+@include dc-make-slides()

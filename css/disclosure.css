@@ -1,0 +1,122 @@
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box; }
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+/**
+* Flex lay-out classes
+* Horizontal lay-out: .dc-layout-horizontal
+* Vertical lay-out: .dc-layout-vertical
+*/
+.dc-layout-vertical {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch; }
+  .dc-layout-vertical > * {
+    flex: 1 0 auto; }
+.dc-layout-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch; }
+  .dc-layout-horizontal > * {
+    flex: 1 0 auto; }
+
+/**
+* Flex property classes
+* Combination of flex-grow, flex-shrink and flex-basis
+*/
+.dc-flex__0_0_auto {
+  flex: 0 0 auto; }
+.dc-flex__1_0_auto {
+  flex: 1 0 auto; }
+.dc-flex__2_0_auto {
+  flex: 2 0 auto; }
+.dc-flex__3_0_auto {
+  flex: 3 0 auto; }
+.dc-flex__4_0_auto {
+  flex: 4 0 auto; }
+.dc-flex__5_0_auto {
+  flex: 5 0 auto; }
+.dc-flex__6_0_auto {
+  flex: 6 0 auto; }
+.dc-flex__7_0_auto {
+  flex: 7 0 auto; }
+.dc-flex__0_0_auto {
+  flex: 0 0 auto; }
+.dc-flex__0_1_auto {
+  flex: 0 1 auto; }
+.dc-flex__0_2_auto {
+  flex: 0 2 auto; }
+.dc-flex__0_3_auto {
+  flex: 0 3 auto; }
+.dc-flex__0_4_auto {
+  flex: 0 4 auto; }
+.dc-flex__0_5_auto {
+  flex: 0 5 auto; }
+.dc-flex__0_6_auto {
+  flex: 0 6 auto; }
+.dc-flex__0_7_auto {
+  flex: 0 7 auto; }
+
+/**
+* Flex justify-content classes
+* start (flex-start), end (flex-end), middle (center), space-between (space-between), space-around (space-around)
+*/
+.dc-justify__start {
+  justify-content: flex-start; }
+.dc-justify__end {
+  justify-content: flex-end; }
+.dc-justify__middle {
+  justify-content: center; }
+.dc-justify__space-between {
+  justify-content: space-between; }
+.dc-justify__space-around {
+  justify-content: space-around; }
+
+/**
+* Flex align-self classes
+* start (flex-start), end (flex-end), middle (center), stretch (stretch)
+*/
+.dc-align-self__start {
+  align-self: flex-start; }
+.dc-align-self__end {
+  align-self: flex-end; }
+.dc-align-self__middle {
+  align-self: center; }
+.dc-align-self__stretch {
+  align-self: stretch; }
+
+/**
+* Flex align-self classes
+* start (flex-start), end (flex-end), middle (center), stretch (stretch)
+*/
+.dc-slide {
+  position: absolute;
+  width: 84vw;
+  height: 84vh;
+  left: 8vw;
+  top: 8vh; }
+  .dc-slide--dev {
+    background: #bf4040; }
+  .dc-slide__header--dev {
+    background: #95bf40; }
+  .dc-slide__main--dev {
+    background: #40bf95; }
+  .dc-slide__footer--dev {
+    background: #4040bf; }
+  .dc-slide__breadcrumb--dev {
+    background: #bf4095; }
+
+/*# sourceMappingURL=disclosure.css.map */
