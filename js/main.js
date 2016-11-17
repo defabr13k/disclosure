@@ -8,20 +8,21 @@ ready(function(){
 
     var App = {
         "init": function() {
-          this._slideRatio = SlideRatios.major_seventh;
+          this._slideRatio = SlideRatios.golden_section;
 
-          this.calculateDimensionsSlides();
+          this.updateDimensionsSlides();
+          
           this.registerEventListeners();
         },
         "registerEventListeners": function() {
           var self = this;
 
           window.addEventListener('resize', function(ev) {
-            self.calculateDimensionsSlides();
+            self.updateDimensionsSlides();
           });
 
         },
-        "calculateDimensionsSlides": function() {
+        "updateDimensionsSlides": function() {
           var slidesElement = document.querySelector('.dc-slides');
           var slideMaxWidth = slidesElement.offsetWidth;
           var slideMaxHeight = slidesElement.offsetHeight;

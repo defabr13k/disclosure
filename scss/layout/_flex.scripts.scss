@@ -154,10 +154,10 @@
   */
   .dc-slides {
     position: relative;
-    width: 92vw;
-    height: 92vh;
-    left: 4vw;
-    top: 4vh;
+    width: 84vw;
+    height: 84vh;
+    left: 8vw;
+    top: 8vh;
 
     @if $dev-mode {
       &--dev {
