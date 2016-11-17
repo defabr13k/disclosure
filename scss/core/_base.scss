@@ -10,6 +10,14 @@ html {
 }
 
 /**
+ * Remove paddings and margins from html and body
+ */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+/**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
  * making all elements inheriting from the root box-sizing value

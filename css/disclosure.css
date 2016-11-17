@@ -5,6 +5,13 @@ html {
   box-sizing: border-box; }
 
 /**
+ * Remove paddings and margins from html and body
+ */
+html, body {
+  padding: 0;
+  margin: 0; }
+
+/**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
  * making all elements inheriting from the root box-sizing value
@@ -99,15 +106,26 @@ html {
   align-self: stretch; }
 
 /**
-* Flex align-self classes
-* start (flex-start), end (flex-end), middle (center), stretch (stretch)
+* Disclosure Slides Container
+* Contains .ds-slide elements
+*/
+.dc-slides {
+  position: relative;
+  width: 92vw;
+  height: 92vh;
+  left: 4vw;
+  top: 4vh; }
+  .dc-slides--dev {
+    background: black; }
+
+/**
+* Disclosure Slide
 */
 .dc-slide {
   position: absolute;
-  width: 84vw;
-  height: 47.25vw;
-  left: 8vw;
-  top: 26.375vw; }
+  width: 100%;
+  left: 0%;
+  top: 0; }
   .dc-slide--dev {
     background: #bf4040; }
   .dc-slide__header--dev {

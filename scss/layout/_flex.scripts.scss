@@ -147,17 +147,34 @@
 ///
 /// @access public
 @mixin dc-make-slides($dev-mode:$project-dev-mode) {
+
+  /**
+  * Disclosure Slides Container
+  * Contains .ds-slide elements
+  */
+  .dc-slides {
+    position: relative;
+    width: 92vw;
+    height: 92vh;
+    left: 4vw;
+    top: 4vh;
+
+    @if $dev-mode {
+      &--dev {
+        background:$dc-slides-dev-background-color;
+      }
+    }
+
+  }
   
   /**
-  * Flex align-self classes
-  * start (flex-start), end (flex-end), middle (center), stretch (stretch)
+  * Disclosure Slide
   */
   .dc-slide {
     position: absolute;
-    width: 84vw;
-    height: 84vw*$dc-slide-ratio;
-    left: (100vw-84vw) / 2;
-    top: (100vw-84vw*$dc-slide-ratio) / 2;
+    width: 100%;
+    left: 0%;
+    top: 0;
 
     &--dev {
       background:$dc-slide-dev-background-color;
