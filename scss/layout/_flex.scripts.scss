@@ -139,6 +139,31 @@
 
 }
 
+/// Mixin for creating Text align properties.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-align-text-properties() {
+  
+  .dc-align-text {
+  
+    &__left {
+      text-align: left;
+    }
+    
+    &__center {
+      text-align: center;
+    }
+    
+    &__right {
+      text-align: right;
+    }
+    
+  }
+
+}
+
 /// Mixin for creating Slides
 ///
 /// @author Philippe De Pauw - Waterschoot

@@ -1,5 +1,71 @@
-/// Springflow Grid Gutter Width
-/// @group assembly-base
+/// Project Development Mode
+/// @group core
 /// @access public
 /// @type Boolean
 $project-dev-mode: true !default;
+
+/// Modular Scale Ratios
+/// @group core
+/// @access public
+/// @type Map
+$ms-ratios: (
+  'minor_second'  : 15/16,
+	'major_second'  : 8/9,
+	'minor_third'   : 5/6,
+	'major_third'   : 4/5,
+  'perfect_fourth': 3/4,
+  'perfect_fifth' : 2/3,
+  'minor_sixth'   : 5/8,
+  'golden_section': 1/1.618,
+  'major_sixth'   : 3/5,
+  'minor_seventh' : 9/16,
+  'major_seventh' : 8/15,
+  'octave'        : 1/2,
+  'major_tenth'   : 2/5,
+  'major_eleventh': 3/8,
+  'major_twelfth' : 1/3,
+  'octave_double' : 1/4
+) !default;
+
+/// Modular Scale Ratio
+/// based on http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
+/// @group core
+/// @access public
+/// @type Number
+$ms-ratio: map-get($ms-ratios, 'major_second') !default;
+
+/// Modular Scale Settings
+/// based on http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
+/// @group core
+/// @access public
+/// @type Number
+$ms00 : 16 !default;
+$ms01 : 18 !default;
+$ms-01: ($ms01 * $ms-ratio)   !default;
+$ms-02: ($ms00 * $ms-ratio)   !default;
+$ms-03: ($ms-01 * $ms-ratio)  !default;
+$ms02 : ($ms00 / $ms-ratio)   !default;
+$ms03 : ($ms01 / $ms-ratio)   !default;
+$ms04 : ($ms02 / $ms-ratio)   !default;
+$ms05 : ($ms03 / $ms-ratio)   !default;
+$ms06 : ($ms04 / $ms-ratio)   !default;
+$ms07 : ($ms05 / $ms-ratio)   !default;
+$ms08 : ($ms06 / $ms-ratio)   !default;
+$ms09 : ($ms07 / $ms-ratio)   !default;
+$ms10 : ($ms08 / $ms-ratio)   !default;
+$ms11 : ($ms09 / $ms-ratio)   !default;
+$ms12 : ($ms10 / $ms-ratio)   !default;
+$ms13 : ($ms11 / $ms-ratio)   !default;
+$ms14 : ($ms12 / $ms-ratio)   !default;
+
+/// Default Font Size
+/// @group core
+/// @access public
+/// @type Number
+$font-size-default: #{$ms00}px !default;
+
+/// Default Font Family
+/// @group core
+/// @access public
+/// @type Number
+$font-family-default: 'Roboto', sans-serif;

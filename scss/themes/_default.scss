@@ -7,10 +7,14 @@ body {
 .dc-slide {
   background: rgba(232,234,246 ,1);
   box-shadow: 0 0 1px 1px rgba(11, 11, 11, 1);
+  color: asm-color-palette('default', 'mid-dark');
 }
 .dc-slide__footer {
   padding: 8px;
   
   background: rgba(57,73,171 ,1);
   color: rgba(159,168,218 ,1);
+}
+.dc-slide__main ul li strong {
+  color: rgba(57,73,171 ,1);
 }

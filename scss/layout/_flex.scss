@@ -14,6 +14,10 @@
 /// @group Layouts
 @include dc-make-align-self-properties();
 
+/// Make the Text align properties
+/// @group Layouts
+@include dc-make-align-text-properties();
+
 /// Make the Slides classes
 /// @group Layouts
 @include dc-make-slides();

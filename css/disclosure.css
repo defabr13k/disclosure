@@ -1,6 +1,7 @@
 /**
  * Set up a decent box model on the root element
  */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 html {
   box-sizing: border-box; }
 
@@ -19,6 +20,13 @@ html, body {
  */
 *, *::before, *::after {
   box-sizing: inherit; }
+
+body {
+  color: #acacac;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4; }
 
 /**
 * Flex lay-out classes
@@ -105,6 +113,13 @@ html, body {
 .dc-align-self__stretch {
   align-self: stretch; }
 
+.dc-align-text__left {
+  text-align: left; }
+.dc-align-text__center {
+  text-align: center; }
+.dc-align-text__right {
+  text-align: right; }
+
 /**
 * Disclosure Slides Container
 * Contains .ds-slide elements
@@ -145,11 +160,15 @@ body {
 
 .dc-slide {
   background: #e8eaf6;
-  box-shadow: 0 0 1px 1px #0b0b0b; }
+  box-shadow: 0 0 1px 1px #0b0b0b;
+  color: #676767; }
 
 .dc-slide__footer {
   padding: 8px;
   background: #3949ab;
   color: #9fa8da; }
+
+.dc-slide__main ul li strong {
+  color: #3949ab; }
 
 /*# sourceMappingURL=disclosure.css.map */

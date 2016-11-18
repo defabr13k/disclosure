@@ -1,0 +1,97 @@
+/// Color Settings
+/// ============================================================================
+/// http://www.dtelepathy.com/blog/design/color-theory
+/// http://www.smashingmagazine.com/2010/02/color-theory-for-designer-part-3-creating-your-own-color-palettes/
+/// http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+/// http://jackiebalzer.com/color
+
+// Cool
+$aqua   : #7fdbff;
+$blue   : #0074d9;
+$navy   : #001f3f;
+$teal   : #39cccc;
+$green  : #2ecc40;
+$olive  : #3d9970;
+$lime   : #01ff70;
+// Warm
+$yellow : #ffdc00;
+$orange : #ff851b;
+$red    : #ff4136;
+$fuchsia: #f012be;
+$purple : #b10dc9;
+$maroon : #85144b;
+// Gray Scale
+$white  : #fcfcfc;
+$silver : #dcdcdc;
+$grey   : #acacac;
+$black  : #1c1c1c;
+
+// Base colors for the application
+$color-default  : $grey !default;
+$color-primary  : $blue !default;
+$color-secondary: $teal !default;
+$color-tertiary : $navy !default;
+$color-success  : $lime !default;
+$color-info     : $yellow !default;
+$color-warning  : $orange !default;
+$color-danger   : $red !default;
+
+// Color palettes for the application based on previous variables
+$color-palettes: (
+	default: (
+		light     : mix(white, $color-default, 80%),
+		mid-light : mix(white, $color-default, 40%),
+		base      : $color-default,
+		mid-dark  : mix(black, $color-default, 40%),
+		dark      : mix(black, $color-default, 80%)
+	),
+	primary: (
+		light     : mix(white, $color-primary, 80%),
+		mid-light : mix(white, $color-primary, 40%),
+		base      : $color-primary,
+		mid-dark  : mix(black, $color-primary, 40%),
+		dark      : mix(black, $color-primary, 80%)
+	),
+	secondary: (
+		light     : mix(white, $color-secondary, 80%),
+		mid-light : mix(white, $color-secondary, 40%),
+		base      : $color-secondary,
+		mid-dark  : mix(black, $color-secondary, 40%),
+		dark      : mix(black, $color-secondary, 80%)
+	),
+	tertiary: (
+		light     : mix(white, $color-tertiary, 80%),
+		mid-light : mix(white, $color-tertiary, 40%),
+		base      : $color-tertiary,
+		mid-dark  : mix(black, $color-tertiary, 40%),
+		dark      : mix(black, $color-tertiary, 80%)
+	),
+	success: (
+		light     : mix(white, $color-success, 80%),
+		mid-light : mix(white, $color-success, 40%),
+		base      : $color-success,
+		mid-dark  : mix(black, $color-success, 40%),
+		dark      : mix(black, $color-success, 80%)
+	),
+	info: (
+		light     : mix(white, $color-info, 80%),
+		mid-light : mix(white, $color-info, 40%),
+		base      : $color-info,
+		mid-dark  : mix(black, $color-info, 40%),
+		dark      : mix(black, $color-info, 80%)
+	),
+	warning: (
+		light     : mix(white, $color-warning, 80%),
+		mid-light : mix(white, $color-warning, 40%),
+		base      : $color-warning,
+		mid-dark  : mix(black, $color-warning, 40%),
+		dark      : mix(black, $color-warning, 80%)
+	),
+	danger: (
+		light     : mix(white, $color-danger, 80%),
+		mid-light : mix(white, $color-danger, 40%),
+		base      : $color-danger,
+		mid-dark  : mix(black, $color-danger, 40%),
+		dark      : mix(black, $color-danger, 80%)
+	)	
+);
