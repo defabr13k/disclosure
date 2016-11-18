@@ -9,6 +9,18 @@ body {
   box-shadow: 0 0 1px 1px rgba(11, 11, 11, 1);
   color: asm-color-palette('default', 'mid-dark');
 }
+.dc-slide__header {
+  padding: 8px;
+  
+  background: rgba(46,125,50 ,1);
+  color: rgba(165,214,167 ,1);
+}
+.dc-slide__breadcrumb {
+  padding: 8px;
+  
+  background: rgba(239,108,0 ,1);
+  color: rgba(255,204,128 ,1);
+}
 .dc-slide__footer {
   padding: 8px;
   

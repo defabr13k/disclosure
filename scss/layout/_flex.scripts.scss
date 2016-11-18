@@ -36,34 +36,27 @@
 
 }
 
-/// Mixin for creating a Flex-based property. Shorthand for flex-grow, flex-shrink and flex-basis
+/// Mixin for creating a Flex-based basis blocks.
 ///
 /// @author Philippe De Pauw - Waterschoot
 ///
 /// @access public
-@mixin dc-make-flex-properties() {
+@mixin dc-make-flex-basis-blocks() {
   
   /**
   * Flex property classes
   * Combination of flex-grow, flex-shrink and flex-basis
   */
-  .dc-flex {
+  .dc-flex-basis-block {
 
-    @for $g from 1 through 8 {   
+    @for $b from 0 through 12 {   
 
-      &__#{$g - 1}_0_auto {
-        flex: ($g - 1) 0 auto;
+      &__#{$b} {
+        flex-basis: #{($b / 12) * 100%};
+        overflow: hidden;
       }
             
     }
-
-    @for $s from 1 through 8 {   
-
-      &__0_#{$s - 1}_auto {
-        flex: 0 ($s - 1) auto;
-      }
-            
-    } 
     
   }
 

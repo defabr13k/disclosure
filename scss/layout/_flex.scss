@@ -2,9 +2,9 @@
 /// @group Layouts
 @include dc-make-layouts();
 
-/// Make the Flex properties
+/// Make the Flex Basis Blocks
 /// @group Layouts
-@include dc-make-flex-properties();
+@include dc-make-flex-basis-blocks();
 
 /// Make the Flex justify-content properties
 /// @group Layouts
