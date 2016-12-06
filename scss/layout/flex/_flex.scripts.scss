@@ -1,0 +1,259 @@
+/// Mixin for creating a Flex lay-out horizontal and vertical
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-layouts() {
+  
+  /**
+  * Flex lay-out classes
+  * Horizontal lay-out: .dc-layout-horizontal
+  * Vertical lay-out: .dc-layout-vertical
+  */
+  .dc-layout {
+    &-vertical {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      
+      > * {
+        flex: 1 0 auto;
+      }
+      
+    }
+    &-horizontal {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      
+      > * {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+}
+
+/// Mixin for creating a Flex-based layout blocks.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-layout-blocks() {
+  
+  /**
+  * Flex property classes
+  * Combination of flex-grow, flex-shrink and flex-basis
+  */
+  .dc-layout-block {
+
+    @for $b from 0 through 12 {   
+
+      &__#{$b} {
+        flex-basis: #{($b / 12) * 100%};
+        overflow: hidden;
+      }
+            
+    }
+    
+  }
+
+}
+
+/// Mixin for creating a Flex-based Content blocks.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-content-blocks() {
+  
+  /**
+  * Content Block
+  */
+  .dc-content-block {
+    
+  }
+
+}
+
+/// Mixin for creating Flex justify-content properties.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-justify-content-properties() {
+  
+  /**
+  * Flex justify-content classes
+  * start (flex-start), end (flex-end), middle (center), space-between (space-between), space-around (space-around)
+  */
+  .dc-justify {
+  
+    &__start {
+      justify-content: flex-start;  
+    }
+    
+    &__end {
+      justify-content: flex-end;  
+    }
+    
+    &__middle {
+      justify-content: center;  
+    }
+    
+    &__space-between {
+      justify-content: space-between;  
+    }
+    
+    &__space-around {
+      justify-content: space-around;  
+    }
+    
+  }
+
+}
+
+/// Mixin for creating Flex align-self properties.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-align-self-properties() {
+  
+  /**
+  * Flex align-self classes
+  * start (flex-start), end (flex-end), middle (center), stretch (stretch)
+  */
+  .dc-align-self {
+  
+    &__start {
+      align-self: flex-start;
+    }
+    
+    &__end {
+      align-self: flex-end;
+    }
+    
+    &__middle {
+      align-self: center;
+    }
+    
+    &__stretch {
+      align-self: stretch;
+    }
+    
+  }
+
+}
+
+/// Mixin for creating Text align properties.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-align-text-properties() {
+  
+  .dc-align-text {
+  
+    &__left {
+      text-align: left;
+    }
+    
+    &__center {
+      text-align: center;
+    }
+    
+    &__right {
+      text-align: right;
+    }
+    
+  }
+
+}
+
+/// Mixin for creating Slides
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @param {Map} $dev-mode [$project-dev-mode]
+///
+/// @access public
+@mixin dc-make-slides($dev-mode:$project-dev-mode) {
+
+  /**
+  * Disclosure Slides Container
+  * Contains .ds-slide elements
+  */
+  .dc-slides {
+    position: relative;
+    width: 84vw;
+    height: 84vh;
+    left: 8vw;
+    top: 8vh;
+
+    @if $dev-mode {
+      &--dev {
+        background:$dc-slides-dev-background-color;
+      }
+    }
+
+  }
+  
+  /**
+  * Disclosure Slide
+  */
+  .dc-slide {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    top: 0;
+
+    &--dev {
+      background:$dc-slide-dev-background-color;
+    }
+    
+    &__header {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-header-dev-background-color;
+        }
+      }
+
+    }
+    
+    &__main {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-main-dev-background-color;
+        }
+      }
+
+    }
+    
+    &__footer {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-footer-dev-background-color;	
+        }
+      }
+
+    }
+
+    &__breadcrumb {
+
+      @if $dev-mode {
+        &--dev {
+          background:$dc-slide-breadcrumb-dev-background-color;	
+        }
+      }
+
+    }
+    
+  }
+
+}

@@ -58,8 +58,12 @@ ready(function(){
           var slideContentBlockElement = document.querySelectorAll('.dc-content-block-text')[index];
           var fitted = false, remSize = 1, parentElement = slideContentBlockElement.parentElement, effElementHeight = Math.floor(slideContentBlockElement.scrollHeight), fittedHeight = Math.floor((parentElement.offsetHeight - 2*this._slidePadding)), direction = (effElementHeight <= fittedHeight)?1:-1, scale = 1;
 
+          scale = (fittedHeight/effElementHeight);
+          console.log(index + ' > EH: ' + effElementHeight + ', > FH: ' + fittedHeight + ' RS: ' + scale);
+
           if(effElementHeight != fittedHeight) {
-            console.log(index + ' > EH: ' + effElementHeight + ', > FH: ' + fittedHeight);
+            
+            console.log(index + ' > DIFFERENT');
 
             /*while(!fitted) {
               effElementHeight = Math.floor(slideContentBlockElement.scrollHeight);
@@ -75,10 +79,10 @@ ready(function(){
               }
             }*/
             
-          } else {
-            this._slideCurrentContentBlockResizeIndex++;
-            this.resizeContentBlocks();
           }
+          
+          this._slideCurrentContentBlockResizeIndex++;
+          this.resizeContentBlocks();
           
         }
     };

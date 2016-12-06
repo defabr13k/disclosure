@@ -1,0 +1,27 @@
+/// Make the Flex lay-outs
+/// @group Layouts
+@include dc-make-layouts();
+
+/// Make the Flex Layout Blocks
+/// @group Layouts
+@include dc-make-layout-blocks();
+
+/// Make the Flex Content Blocks
+/// @group Layouts
+@include dc-make-content-blocks();
+
+/// Make the Flex justify-content properties
+/// @group Layouts
+@include dc-make-justify-content-properties();
+
+/// Make the Flex align-self properties
+/// @group Layouts
+@include dc-make-align-self-properties();
+
+/// Make the Text align properties
+/// @group Layouts
+@include dc-make-align-text-properties();
+
+/// Make the Slides classes
+/// @group Layouts
+@include dc-make-slides();
