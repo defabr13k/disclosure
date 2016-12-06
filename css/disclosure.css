@@ -29,66 +29,87 @@ body {
   line-height: 1.4; }
 
 /**
-* Flex lay-out classes
-* Horizontal lay-out: .dc-layout-horizontal
-* Vertical lay-out: .dc-layout-vertical
+* Flex lay-out block classes
+* Horizontal lay-out: .dc-layout-block-horizontal
 */
-.dc-layout-vertical {
+.dc-layout-block-horizontal {
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
-  align-items: stretch; }
-  .dc-layout-vertical > * {
-    flex: 1 0 auto; }
-.dc-layout-horizontal {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: stretch; }
-  .dc-layout-horizontal > * {
-    flex: 1 0 auto; }
+  align-items: stretch;
+  flex-direction: row; }
 
 /**
-* Flex property classes
-* Combination of flex-grow, flex-shrink and flex-basis
+* Flex lay-out block classes
+* Vertical lay-out: .dc-layout-block-vertical
 */
-.dc-flex-basis-block__0 {
+.dc-layout-block-vertical {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  flex-direction: column; }
+
+/**
+* Flex lay-out content block classes
+* Image: .dc-content-block-text
+*/
+.dc-content-block-text {
+  font-size: 1rem;
+  padding: 8px; }
+
+/**
+* Flex lay-out content block classes
+* Image: .dc-content-block-image
+*/
+.dc-content-block-image {
+  font-size: 1rem; }
+
+/**
+* Flex lay-out content block classes
+* Video: .dc-content-block-video
+*/
+.dc-content-block-video {
+  font-size: 1rem; }
+
+/**
+* Flex lay-out block basis classes
+*/
+.dc-layout-block-basis__0 {
   flex-basis: 0%;
   overflow: hidden; }
-.dc-flex-basis-block__1 {
+.dc-layout-block-basis__1 {
   flex-basis: 8.33333%;
   overflow: hidden; }
-.dc-flex-basis-block__2 {
+.dc-layout-block-basis__2 {
   flex-basis: 16.66667%;
   overflow: hidden; }
-.dc-flex-basis-block__3 {
+.dc-layout-block-basis__3 {
   flex-basis: 25%;
   overflow: hidden; }
-.dc-flex-basis-block__4 {
+.dc-layout-block-basis__4 {
   flex-basis: 33.33333%;
   overflow: hidden; }
-.dc-flex-basis-block__5 {
+.dc-layout-block-basis__5 {
   flex-basis: 41.66667%;
   overflow: hidden; }
-.dc-flex-basis-block__6 {
+.dc-layout-block-basis__6 {
   flex-basis: 50%;
   overflow: hidden; }
-.dc-flex-basis-block__7 {
+.dc-layout-block-basis__7 {
   flex-basis: 58.33333%;
   overflow: hidden; }
-.dc-flex-basis-block__8 {
+.dc-layout-block-basis__8 {
   flex-basis: 66.66667%;
   overflow: hidden; }
-.dc-flex-basis-block__9 {
+.dc-layout-block-basis__9 {
   flex-basis: 75%;
   overflow: hidden; }
-.dc-flex-basis-block__10 {
+.dc-layout-block-basis__10 {
   flex-basis: 83.33333%;
   overflow: hidden; }
-.dc-flex-basis-block__11 {
+.dc-layout-block-basis__11 {
   flex-basis: 91.66667%;
   overflow: hidden; }
-.dc-flex-basis-block__12 {
+.dc-layout-block-basis__12 {
   flex-basis: 100%;
   overflow: hidden; }
 
@@ -158,6 +179,9 @@ body {
     background: #4040bf; }
   .dc-slide__breadcrumb--dev {
     background: #bf4095; }
+  .dc-slide ul {
+    margin: 0;
+    padding-left: 16px; }
 
 body {
   background: #1a237e; }
@@ -168,24 +192,33 @@ body {
 .dc-slide {
   background: #e8eaf6;
   box-shadow: 0 0 1px 1px #0b0b0b;
-  color: #676767; }
+  color: #676767;
+  font-size: 1rem; }
+  .dc-slide h1 {
+    font-size: 1.42383em; }
+  .dc-slide h2 {
+    font-size: 1.26563em; }
+  .dc-slide h3 {
+    font-size: 1.125em; }
+  .dc-slide h3, .dc-slide h4, .dc-slide h5, .dc-slide h6 {
+    font-size: 1em; }
 
 .dc-slide__header {
-  padding: 8px;
   background: #2e7d32;
   color: #a5d6a7; }
 
 .dc-slide__breadcrumb {
-  padding: 8px;
   background: #ef6c00;
   color: #ffcc80; }
 
 .dc-slide__footer {
-  padding: 8px;
   background: #3949ab;
   color: #9fa8da; }
 
 .dc-slide__main ul li strong {
   color: #3949ab; }
+
+.dc-slide__block {
+  font-size: 1rem; }
 
 /*# sourceMappingURL=disclosure.css.map */

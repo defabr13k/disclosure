@@ -36,33 +36,23 @@ $ms-ratio: map-get($ms-ratios, 'major_second') !default;
 
 /// Modular Scale Settings
 /// based on http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
+/// No units it's just a relative number
 /// @group core
 /// @access public
 /// @type Number
-$ms00 : 16 !default;
-$ms01 : 18 !default;
-$ms-01: ($ms01 * $ms-ratio)   !default;
-$ms-02: ($ms00 * $ms-ratio)   !default;
-$ms-03: ($ms-01 * $ms-ratio)  !default;
-$ms02 : ($ms00 / $ms-ratio)   !default;
-$ms03 : ($ms01 / $ms-ratio)   !default;
-$ms04 : ($ms02 / $ms-ratio)   !default;
-$ms05 : ($ms03 / $ms-ratio)   !default;
-$ms06 : ($ms04 / $ms-ratio)   !default;
-$ms07 : ($ms05 / $ms-ratio)   !default;
-$ms08 : ($ms06 / $ms-ratio)   !default;
-$ms09 : ($ms07 / $ms-ratio)   !default;
-$ms10 : ($ms08 / $ms-ratio)   !default;
-$ms11 : ($ms09 / $ms-ratio)   !default;
-$ms12 : ($ms10 / $ms-ratio)   !default;
-$ms13 : ($ms11 / $ms-ratio)   !default;
-$ms14 : ($ms12 / $ms-ratio)   !default;
+$ms00 : 1 !default;
+$ms-02: ($ms00 * $ms-ratio) !default;
+$ms02 : ($ms00 / $ms-ratio) !default;
+$ms04 : ($ms02 / $ms-ratio) !default;
+$ms06 : ($ms04 / $ms-ratio) !default;
+$ms08 : ($ms06 / $ms-ratio) !default;
+$ms10 : ($ms08 / $ms-ratio) !default;
 
 /// Default Font Size
 /// @group core
 /// @access public
 /// @type Number
-$font-size-default: #{$ms00}px !default;
+$font-size-default: #{$ms00 * 16}px !default;
 
 /// Default Font Family
 /// @group core

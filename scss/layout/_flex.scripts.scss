@@ -1,63 +1,85 @@
-/// Mixin for creating a Flex lay-out horizontal and vertical
+/// Mixin for creating Flex-based lay-out blocks (horizontal and vertical)
 ///
 /// @author Philippe De Pauw - Waterschoot
 ///
 /// @access public
-@mixin dc-make-layouts() {
+@mixin dc-make-layout-blocks() {
   
   /**
-  * Flex lay-out classes
-  * Horizontal lay-out: .dc-layout-horizontal
-  * Vertical lay-out: .dc-layout-vertical
+  * Flex lay-out block classes
+  * Horizontal lay-out: .dc-layout-block-horizontal
   */
-  .dc-layout {
-    &-vertical {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      
-      > * {
-        flex: 1 0 auto;
-      }
-      
-    }
-    &-horizontal {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      
-      > * {
-        flex: 1 0 auto;
-      }
-    }
+  .dc-layout-block-horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  /**
+  * Flex lay-out block classes
+  * Vertical lay-out: .dc-layout-block-vertical
+  */
+  .dc-layout-block-vertical {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: column;
   }
 
 }
 
-/// Mixin for creating a Flex-based basis blocks.
+/// Mixin for creating Flex-based content blocks
 ///
 /// @author Philippe De Pauw - Waterschoot
 ///
 /// @access public
-@mixin dc-make-flex-basis-blocks() {
+@mixin dc-make-content-blocks() {
+
+  /**
+  * Flex lay-out content block classes
+  * Image: .dc-content-block-text
+  */
+  .dc-content-block-text {
+    font-size: 1rem;
+    padding: 8px;
+  }
   
   /**
-  * Flex property classes
-  * Combination of flex-grow, flex-shrink and flex-basis
+  * Flex lay-out content block classes
+  * Image: .dc-content-block-image
   */
-  .dc-flex-basis-block {
+  .dc-content-block-image {
+    font-size: 1rem;
+  }
 
-    @for $b from 0 through 12 {   
+  /**
+  * Flex lay-out content block classes
+  * Video: .dc-content-block-video
+  */
+  .dc-content-block-video {
+    font-size: 1rem;
+  }
 
+}
+
+/// Mixin for creating a Flex-based lay-out block basises.
+///
+/// @author Philippe De Pauw - Waterschoot
+///
+/// @access public
+@mixin dc-make-layout-block-basises() {
+  
+  /**
+  * Flex lay-out block basis classes
+  */
+  .dc-layout-block-basis {
+    @for $b from 0 through 12 { 
       &__#{$b} {
         flex-basis: #{($b / 12) * 100%};
         overflow: hidden;
-      }
-            
+      }   
     }
-    
   }
 
 }
@@ -236,6 +258,11 @@
         }
       }
 
+    }
+
+    & ul {
+      margin: 0;
+      padding-left: 16px;
     }
     
   }

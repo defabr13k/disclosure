@@ -1,10 +1,14 @@
-/// Make the Flex lay-outs
+/// Make the Flex lay-out blocks
 /// @group Layouts
-@include dc-make-layouts();
+@include dc-make-layout-blocks();
 
-/// Make the Flex Basis Blocks
+/// Make the Flex content blocks
 /// @group Layouts
-@include dc-make-flex-basis-blocks();
+@include dc-make-content-blocks();
+
+/// Make the Flex lay-out block basises
+/// @group Layouts
+@include dc-make-layout-block-basises();
 
 /// Make the Flex justify-content properties
 /// @group Layouts

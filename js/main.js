@@ -9,15 +9,20 @@ ready(function(){
     var App = {
         "init": function() {
           this._slideRatio = SlideRatios.golden_section;
+          this._slideCurrentContentBlockResizeIndex = 0;
+          this._slidePadding = 0;
 
           this.updateDimensionsSlides();
           
           this.registerEventListeners();
+
+          this.resizeContentBlocks();
         },
         "registerEventListeners": function() {
           var self = this;
 
           window.addEventListener('resize', function(ev) {
+            self._slideCurrentContentBlockResizeIndex = 0;
             self.updateDimensionsSlides();
           });
 
@@ -41,6 +46,40 @@ ready(function(){
             slide.style.top = (slideMaxHeight - slideHeight) / 2 + 'px';
           });
 
+          this.resizeContentBlocks();
+
+        },
+        "resizeContentBlocks": function() {
+          if(this._slideCurrentContentBlockResizeIndex < document.querySelectorAll('.dc-content-block-text').length) {
+            this.resizeContentBlock(this._slideCurrentContentBlockResizeIndex);
+          }
+        },
+        "resizeContentBlock": function(index) {
+          var slideContentBlockElement = document.querySelectorAll('.dc-content-block-text')[index];
+          var fitted = false, remSize = 1, parentElement = slideContentBlockElement.parentElement, effElementHeight = Math.floor(slideContentBlockElement.scrollHeight), fittedHeight = Math.floor((parentElement.offsetHeight - 2*this._slidePadding)), direction = (effElementHeight <= fittedHeight)?1:-1, scale = 1;
+
+          if(effElementHeight != fittedHeight) {
+            console.log(index + ' > EH: ' + effElementHeight + ', > FH: ' + fittedHeight);
+
+            /*while(!fitted) {
+              effElementHeight = Math.floor(slideContentBlockElement.scrollHeight);
+              fittedHeight = Math.floor((parentElement.offsetHeight - 2*this._slidePadding))
+
+              if(direction == 1 && effElementHeight > fittedHeight) {
+                fitted = true;
+              } else if(direction == -1 && effElementHeight < fittedHeight) {
+                fitted = true;
+              } else {
+                remSize += direction*0.005;
+                slideContentBlockElement.style.fontSize = `${remSize}rem`;
+              }
+            }*/
+            
+          } else {
+            this._slideCurrentContentBlockResizeIndex++;
+            this.resizeContentBlocks();
+          }
+          
         }
     };
 
