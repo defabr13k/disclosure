@@ -53,8 +53,13 @@ body {
 * Image: .dc-content-block-text
 */
 .dc-content-block-text {
-  font-size: 1rem;
-  padding: 8px; }
+  font-size: 1rem; }
+  .dc-content-block-text__inner {
+    padding: 8px; }
+    .dc-content-block-text__inner p:first-of-type {
+      margin-top: 0; }
+    .dc-content-block-text__inner p:last-of-type {
+      margin-bottom: 0; }
 
 /**
 * Flex lay-out content block classes
@@ -62,6 +67,12 @@ body {
 */
 .dc-content-block-image {
   font-size: 1rem; }
+  .dc-content-block-image__inner {
+    height: 100%; }
+    .dc-content-block-image__inner > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
 
 /**
 * Flex lay-out content block classes
