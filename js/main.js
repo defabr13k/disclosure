@@ -10,6 +10,7 @@ ready(function(){
         "init": function() {
           this._slideRatio = SlideRatios.golden_section;
           this._slideCurrentContentBlockResizeIndex = 0;
+          this._slideCurrentContentBlockTextResizeIndex = 0;
           this._slideCurrentContentBlockImageResizeIndex = 0;
           this._slidePadding = 0;
 
@@ -22,6 +23,7 @@ ready(function(){
 
           window.addEventListener('resize', function(ev) {
             self._slideCurrentContentBlockResizeIndex = 0;
+            self._slideCurrentContentBlockTextResizeIndex = 0;
             self._slideCurrentContentBlockImageResizeIndex = 0;
             self.updateDimensionsSlides();
           });
@@ -46,7 +48,8 @@ ready(function(){
             slide.style.top = (slideMaxHeight - slideHeight) / 2 + 'px';
           });
 
-          this.resizeContentBlocks();
+          //this.resizeContentBlocks();
+          this.resizeContentBlockTexts();
           this.resizeContentBlockImages();
 
         },
@@ -63,6 +66,47 @@ ready(function(){
           this._slideCurrentContentBlockImageResizeIndex++;
           this.resizeContentBlockImages();
         },
+        "resizeContentBlockTexts": function() {
+          if(this._slideCurrentContentBlockTextResizeIndex < document.querySelectorAll('.dc-content-block-text').length) {
+            this.resizeContentBlockText(this._slideCurrentContentBlockTextResizeIndex);
+          }
+        },
+        "resizeContentBlockText": function(index) {
+          var slideContentBlockTextElement = document.querySelectorAll('.dc-content-block-text')[index];
+          var fontSize = slideContentBlockTextElement.style.fontSize;
+          var remSize = (fontSize == '')?1.0:parseFloat(fontSize.substring(0, fontSize.indexOf('r')));
+          var effElementHeight = slideContentBlockTextElement.querySelector('.dc-content-block-text__inner').clientHeight;
+          var fittedHeight = (slideContentBlockTextElement.offsetHeight - 2*this._slidePadding);
+          var scale = Math.floor((fittedHeight/effElementHeight)*100);
+          var direction = (scale >= 100)?1.0:-1.0;
+          var fitted = false;
+
+          console.log(index + 'EH: ' + effElementHeight + ' > FH: ' + fittedHeight + ' RS: ' + scale);
+
+          if(scale < 95 || scale > 100) {
+
+            //console.log(index + ' > EH: ' + effElementHeight + ', > FH: ' + fittedHeight + ' RS: ' + scale);
+            
+            while(!fitted) {
+              effElementHeight = slideContentBlockTextElement.querySelector('.dc-content-block-text__inner').clientHeight;
+              fittedHeight = (slideContentBlockTextElement.offsetHeight - 2*this._slidePadding);
+              scale = Math.floor((fittedHeight/effElementHeight)*100);
+
+              if( (scale >= 95 && scale <= 105) || (direction == 1 && scale < 95) || (direction == -1 && scale > 105) ) {
+                fitted = true;
+              } else {
+                remSize += direction*(scale/1000);
+                slideContentBlockTextElement.style.fontSize = `${remSize}rem`;
+              }
+
+            }
+            
+          }
+          
+          this._slideCurrentContentBlockTextResizeIndex++;
+          this.resizeContentBlockTexts();
+
+        },
         "resizeContentBlocks": function() {
           if(this._slideCurrentContentBlockResizeIndex < document.querySelectorAll('.dc-content-block-text').length) {
             this.resizeContentBlock(this._slideCurrentContentBlockResizeIndex);
@@ -72,7 +116,7 @@ ready(function(){
           var slideContentBlockElement = document.querySelectorAll('.dc-content-block-text')[index];
           var fontSize = slideContentBlockElement.style.fontSize, fitted = false, remSize = (fontSize == '')?1.0:parseFloat(fontSize.substring(0, fontSize.indexOf('r'))), parentElement = slideContentBlockElement.parentElement, effElementHeight = slideContentBlockElement.querySelector('.dc-content-block-text__inner').clientHeight, fittedHeight = (parentElement.offsetHeight - 2*this._slidePadding), scale = Math.floor((fittedHeight/effElementHeight)*100), direction = (scale >= 100)?1.0:-1.0, tolerance = 20;
 
-          console.log(index + 'CH: ' + slideContentBlockElement.querySelector('.dc-content-block-text__inner').clientHeight + '> EH: ' + effElementHeight + ', > FH: ' + fittedHeight + ' RS: ' + scale);
+          console.log(index + 'CH: ' + slideContentBlockElement.querySelector('.dc-content-block-text__inner').clientHeight + 'SH: ' + parentElement.scrollHeight + ' > EH: ' + effElementHeight + ', > FH: ' + fittedHeight + ' RS: ' + scale);
 
           if(scale < 95 || scale > 100) {
 
